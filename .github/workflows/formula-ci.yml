@@ -1,0 +1,48 @@
+name: Formula CI
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - Formula/**
+      - .github/workflows/formula-ci.yml
+  pull_request:
+    paths:
+      - Formula/**
+      - .github/workflows/formula-ci.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - macos-15-intel
+          - macos-26
+        include:
+          - os: ubuntu-latest
+            container:
+              image: ghcr.io/homebrew/brew:main
+              options: --privileged
+    runs-on: ${{ matrix.os }}
+    container: ${{ fromJSON(toJSON(matrix.container)) }}
+
+    steps:
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@df4b09108a1de9d6f995fe68f302b3f68bd6d2ef # 2026.07.20.1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Check formula style
+        run: brew style social-archiver-cli
+
+      - name: Install formula
+        run: brew install social-archiver-cli
+
+      - name: Test formula
+        run: brew test social-archiver-cli
