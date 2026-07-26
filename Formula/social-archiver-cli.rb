@@ -27,8 +27,9 @@ class SocialArchiverCli < Formula
 
   def install
     libexec.install "social-archiver", "social-archiver-credential-helper"
+    credential_helper = libexec/"social-archiver-credential-helper"
     (bin/"social-archiver").write_env_script libexec/"social-archiver",
-                                             SOCIAL_ARCHIVER_CREDENTIAL_HELPER: libexec/"social-archiver-credential-helper"
+                                             SOCIAL_ARCHIVER_CREDENTIAL_HELPER: credential_helper
   end
 
   test do
