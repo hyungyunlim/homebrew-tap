@@ -1,18 +1,18 @@
 class SocialArchiverCli < Formula
   desc "Archive web and social content from your terminal"
   homepage "https://github.com/hyungyunlim/obsidian-social-archiver-releases"
-  version "0.1.21"
+  version "0.1.22"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/hyungyunlim/obsidian-social-archiver-releases/releases/download/cli-v0.1.21/social-archiver-cli_0.1.21_darwin_arm64.zip"
-      sha256 "f3f3eea74aad65afe8fd6fd1e01ed6e3a1650d9684f9b2511f527b8bd3032b70"
+      url "https://github.com/hyungyunlim/obsidian-social-archiver-releases/releases/download/cli-v0.1.22/social-archiver-cli_0.1.22_darwin_arm64.zip"
+      sha256 "14d62d2b3ea349a7d93cce373b720e12dff90ce0e07ad18e35684edeca757c3a"
     end
 
     on_intel do
-      url "https://github.com/hyungyunlim/obsidian-social-archiver-releases/releases/download/cli-v0.1.21/social-archiver-cli_0.1.21_darwin_x64.zip"
-      sha256 "0dad79ca964becf7999e204448734a61fd0fe4d5dfab450c7b739aaa89a9e9ab"
+      url "https://github.com/hyungyunlim/obsidian-social-archiver-releases/releases/download/cli-v0.1.22/social-archiver-cli_0.1.22_darwin_x64.zip"
+      sha256 "1e1acd26ea9ae98a3335be13e2a0605b14ae246048eea0dcbb4237dd98919653"
     end
   end
 
@@ -20,8 +20,8 @@ class SocialArchiverCli < Formula
     depends_on arch: :x86_64
 
     on_intel do
-      url "https://github.com/hyungyunlim/obsidian-social-archiver-releases/releases/download/cli-v0.1.21/social-archiver-cli_0.1.21_linux_x64.tar.gz"
-      sha256 "700a594925e732dcad66c760fe10cae0262213423876c66fe9a4a406b3ae0fad"
+      url "https://github.com/hyungyunlim/obsidian-social-archiver-releases/releases/download/cli-v0.1.22/social-archiver-cli_0.1.22_linux_x64.tar.gz"
+      sha256 "765b153781fe861b95f2281285db440fb5cba24d0bca6efebe0ea71f8c9d66a3"
     end
   end
 
